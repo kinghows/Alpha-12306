@@ -8,4 +8,4 @@ python 版本：Python 3.7.4rc2
 
 打包成一个exe文件：
 
-pyinstaller -F Alpha-P.py
+pyinstaller -F Alpha-12306.py
