@@ -2,6 +2,7 @@ import json
 import random
 import re
 import time
+import os
 import TickerConfig
 from config.urlConf import urls
 
@@ -14,7 +15,9 @@ def getDrvicesID(session):
     if TickerConfig.COOKIE_TYPE is 1:
         from selenium import webdriver
         cookies = []
-        driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH)
+        path = os.path.join(os.getcwd(), 'chromedriver.exe')
+        driver = webdriver.Chrome(executable_path=path)
+        #driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH)
         driver.get("https://www.12306.cn/index/index.html")
         time.sleep(10)
         for c in driver.get_cookies():
